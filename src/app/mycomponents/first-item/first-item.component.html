@@ -1,0 +1,17 @@
+<form name="frm">
+<div class="my-3">
+    <div class="mb-3">
+        
+      <label for="exampleInputEmail1" class="form-label">First project title</label>
+      <input type="text" [ngClass]="{'strike': !first.active}" [(ngModel)]="first.title"  id="title" name="title"  aria-describedby="emailHelp" required="ngModel">
+      </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">first project decsription</label>
+      <input type="text" [ngClass]="{'strike': !first.active}" name="desc" id="desc" [(ngModel)]="first.desc" required="ngModel">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="first{{i}}" (click)="onCheckboxClick(first)" [checked]="!first.active">
+      <label class="form-check-label" for="first{{i}}">Done</label>
+    </div>
+<button class="btn btn-danger" (click)="onclick(first)">Delete</button>
+</div></form>

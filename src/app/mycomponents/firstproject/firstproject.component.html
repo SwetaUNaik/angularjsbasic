@@ -1,0 +1,14 @@
+<!--<ul *ngFor="let First of first">
+    <li>{{First.sno}} - {{First.title}} - {{First.desc}} - {{First.active}}</li>
+</ul>-->
+<div class="container">
+    <h1 class="text-center mb-3">First angularjs project by sweta naik</h1>
+    <app-add-first (firstAdd)="addfirst($event)"></app-add-first>
+    <h4>Your first project</h4>
+        <div *ngIf="this.first.length===0; else elseBlock">No first project to display</div>
+        <ng-template #elseBlock>
+            <div *ngFor="let First of first; index as i">
+            <app-first-item [first] = "First" [i]="i" (firstDelete)="deletefirst($event)" (firstCheckbox)="togglefirst($event)"> </app-first-item>
+            </div>
+        </ng-template>
+</div>
